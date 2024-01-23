@@ -6,4 +6,4 @@ console.log(somePerson);
     age:number,
 }
 //error
-*/ 
+*/
