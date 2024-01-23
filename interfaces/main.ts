@@ -1,3 +1,5 @@
+
+//interfaces
 interface Point{
     x: number,
     y:number,
@@ -20,3 +22,4 @@ const coordObject: Point = {
 }
 
 showCoords(coordObject)
+
