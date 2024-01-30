@@ -36,5 +36,7 @@ const local1: Coordinates = {
 
 }*/ 
 
+
+
 //error, as this 'test' was not defined in our set of literal types Coordinates
 //Here, Coordinates is an interface that includes a property called status with a literal type that can only be "active" or "inactive".
