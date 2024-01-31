@@ -43,3 +43,19 @@ function doSomething(x: unknown){
 
 doSomething([1,2,3,4,5,6])
 doSomething('2')
+
+
+//never
+function showError(msg: string): never{
+    throw new Error (msg)
+}
+
+//showError("Some error!")
+
+//rest parameters 
+function sumAll(...n: number[]){
+    return n.reduce((number, sum) => sum + number)
+
+}
+console.log(sumAll(1,2,3,4,5))
+console.log(sumAll(1,2,3))
