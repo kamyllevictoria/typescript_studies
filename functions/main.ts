@@ -22,6 +22,9 @@ function preGreeting(f: (name: string, ) => string, userName:string){
 preGreeting(greeting, 'ana')
 
 
+
+
+
 //generic functions
 function firstElement<T>(array: T[]): T{
     return array[0];
@@ -41,3 +44,6 @@ function mergeObjects<U, T>(obj1: U, obj2: T){
 
 const newObj = mergeObjects({name: "Kamylle"}, {age: 30, job: "programmer"}) //2 objetos unidos, obj1 com suas propriedades name e obj2 com propriedades age e job
 console.log(newObj)
+
+
+
