@@ -59,3 +59,15 @@ function sumAll(...n: number[]){
 }
 console.log(sumAll(1,2,3,4,5))
 console.log(sumAll(1,2,3))
+
+
+
+//destructuring
+function showProductDetails({name, price}: {name:string, price: number}):string{
+    return  `Price: ${price} Name: ${name}`
+}
+
+const shirt = {name: "t-shirt", price: 50.00}
+console.log(showProductDetails(shirt))
+
+//e uma tecnica para extrair e descompactar valores de arrays, objetos etc.
