@@ -51,7 +51,7 @@ operations([1,2,3], "sub");
 
 //instanceof
 class User{
-    name;
+    name: string;
     constructor(name:string){
         this.name = name;
     }
@@ -70,7 +70,7 @@ console.log(lucas)
 console.log(kamylle)
 
 
-function userGreeting(user: object){
+function userGreeting(user: User){
     if(User instanceof SuperUser){
         console.log(`Hello, superuser ${user.name}, need some help?`)
     } else if(user instanceof User){

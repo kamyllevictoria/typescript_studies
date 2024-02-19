@@ -38,10 +38,6 @@ const myChar = {
     hasDriveLicense: true
 };
 console.log(showCharData(myChar, 'name')); //kamylle
-
-
-
-
 const person = {
     name: 'Lucas',
     goToSchool: true,
