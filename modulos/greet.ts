@@ -3,3 +3,4 @@ export default  function importGreet(){
 }
 
 //para exportarmos uma função colocamos o export default antes da função
+
