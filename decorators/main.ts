@@ -1,3 +1,4 @@
+//decorators 
 function myDecorator(){
     console.log('Initializing method execution')
 
@@ -25,3 +26,40 @@ const myObj = new myClass()
 myObj.testing()
 
 //automaticamente, quando criarmos uma nova instancia do nosso objeto, os metodos do decorator serão executados também, pois realizamos sua inserção na classe myClass
+
+//multiplos decorators
+function b() {
+    console.log("Running b!");
+
+    return function (
+        target: any,
+        propertyKey: string | symbol,
+        descriptor: PropertyDescriptor
+    ) {
+        console.log("Running b function!");
+    };
+}
+
+function a() {
+    console.log("Running a!");
+
+    return function (
+        target: any,
+        propertyKey: string | symbol,
+        descriptor: PropertyDescriptor
+    ) {
+        console.log("Running a function!");
+    };
+}
+
+class multipleDecorators {
+    @a()
+    @b()
+    test() {
+        console.log("End!");
+    }
+}
+
+//o decorator mais proximo da função executa primeiro
+const multiple = new multipleDecorators()
+multiple.test()

@@ -5,6 +5,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+//decorators 
 function myDecorator() {
     console.log('Initializing method execution');
     return function (target, propertKey, descriptor) {
@@ -27,3 +28,28 @@ __decorate([
 const myObj = new myClass();
 myObj.testing();
 //automaticamente, quando criarmos uma nova instancia do nosso objeto, os metodos do decorator serão executados também, pois realizamos sua inserção na classe myClass
+//multiplos decorators
+function b() {
+    console.log("Running b!");
+    return function (target, propertyKey, descriptor) {
+        console.log("Running b function!");
+    };
+}
+function a() {
+    console.log("Running a!");
+    return function (target, propertyKey, descriptor) {
+        console.log("Running a function!");
+    };
+}
+class multipleDecorators {
+    test() {
+        console.log("End!");
+    }
+}
+__decorate([
+    a(),
+    b()
+], multipleDecorators.prototype, "test", null);
+//o decorator mais proximo da função executa primeiro
+const multiple = new multipleDecorators();
+multiple.test();
