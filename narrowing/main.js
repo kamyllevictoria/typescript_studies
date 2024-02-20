@@ -1,4 +1,19 @@
 "use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 //type guard
 function sum(a, b) {
     if (typeof a === 'string' && typeof b === 'string') {
@@ -18,19 +33,19 @@ sum('5', 4);
 function operations(arrayNum, operation) {
     if (operation) { //narrow
         if (operation === 'sum') {
-            const sum = arrayNum.reduce((i, total) => i + total);
-            console.log(sum);
+            var sum_1 = arrayNum.reduce(function (i, total) { return i + total; });
+            console.log(sum_1);
         }
         else if (operation === 'multiply') {
-            const multiply = arrayNum.reduce((i, total) => i * total);
+            var multiply = arrayNum.reduce(function (i, total) { return i * total; });
             console.log(multiply);
         }
         else if (operation === 'sub') {
-            const sub = arrayNum.reduce((i, total) => i - total);
+            var sub = arrayNum.reduce(function (i, total) { return i - total; });
             console.log(sub);
         }
         else if (operation === 'division') {
-            const division = arrayNum.reduce((i, total) => i % total);
+            var division = arrayNum.reduce(function (i, total) { return i % total; });
             console.log(division);
         }
         else {
@@ -41,41 +56,45 @@ function operations(arrayNum, operation) {
 operations([1, 2, 3, 4]);
 operations([1, 2, 3], "sub");
 //instanceof
-class User {
-    constructor(name) {
+var User = /** @class */ (function () {
+    function User(name) {
         this.name = name;
     }
-}
-class SuperUser extends User {
-    constructor(name) {
-        super(name);
+    return User;
+}());
+var SuperUser = /** @class */ (function (_super) {
+    __extends(SuperUser, _super);
+    function SuperUser(name) {
+        return _super.call(this, name) || this;
     }
-}
-const lucas = new User('Lucas');
-const kamylle = new SuperUser('Kamylle');
+    return SuperUser;
+}(User));
+var lucas = new User('Lucas');
+var kamylle = new SuperUser('Kamylle');
 console.log(lucas);
 console.log(kamylle);
 function userGreeting(user) {
     if (User instanceof SuperUser) {
-        console.log(`Hello, superuser ${user.name}, need some help?`);
+        console.log("Hello, superuser ".concat(user.name, ", need some help?"));
     }
     else if (user instanceof User) {
-        console.log(`Hello user ${user.name}`);
+        console.log("Hello user ".concat(user.name));
     }
 }
 userGreeting(lucas);
 userGreeting(kamylle);
 //in operator
-class Dog {
-    constructor(name, breed) {
+var Dog = /** @class */ (function () {
+    function Dog(name, breed) {
         this.name = name;
         if (breed) {
             this.breed = breed;
         }
     }
-}
-const dog_white = new Dog('Papi', 'Pastor Alemão');
-const dog_black = new Dog('lulu');
+    return Dog;
+}());
+var dog_white = new Dog('Papi', 'Pastor Alemão');
+var dog_black = new Dog('lulu');
 function showDogDetails(dog) {
     if ('breed' in dog) {
         console.log('Your dog is not a srd');

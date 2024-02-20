@@ -26,17 +26,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const greet_js_1 = __importDefault(require("./greet.js"));
+var greet_js_1 = __importDefault(require("./greet.js"));
 (0, greet_js_1.default)();
 //precisamos importar os arquivos como .js pois a importação de modulos ocorre pelo node.js e ele nao consegue exportar modulos com a extensão de typescript
 //importando variaveis
-const variable_js_1 = require("./variable.js"); //para a importação de variaveis usamos chaves, pois estamos usando outro decurso, o destructuring
+var variable_js_1 = require("./variable.js"); //para a importação de variaveis usamos chaves, pois estamos usando outro decurso, o destructuring
 console.log(variable_js_1.x);
 //multiplas importações
-const multiple_js_1 = require("./multiple.js");
+var multiple_js_1 = require("./multiple.js");
 console.log(multiple_js_1.a); //podemos ter acesso a todas as variaveis no arquivo multiple.ts
 //importando tipos
-const myNumbers = __importStar(require("./numbers.js")); //precisamos importar um typealias para termos acesso a todos os dados presentes no numbers.ts
+var myNumbers = __importStar(require("./numbers.js")); //precisamos importar um typealias para termos acesso a todos os dados presentes no numbers.ts
 console.log(myNumbers);
-const nx = myNumbers.n1;
+var nx = myNumbers.n1;
 console.log(nx); //valor de n1

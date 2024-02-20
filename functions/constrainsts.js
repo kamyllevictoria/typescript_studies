@@ -1,6 +1,6 @@
 "use strict";
 function biggestNumber(a, b) {
-    let biggest;
+    var biggest;
     if (+a > +b) {
         biggest = a;
     }

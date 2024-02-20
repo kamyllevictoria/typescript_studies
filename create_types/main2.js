@@ -1,13 +1,13 @@
 "use strict";
 //typeof type
-const userName = "kamylle";
-const userName2 = 'Caio';
-const newTruck = {
+var userName = "kamylle";
+var userName2 = 'Caio';
+var newTruck = {
     km: 1000,
     kg: 2000,
     description: 'Truck with low kilograms.'
 };
 function showKm(km, kg, description) {
-    console.log(`Km: ${km}, Kg: ${kg}, Description: ${description}`);
+    console.log("Km: ".concat(km, ", Kg: ").concat(kg, ", Description: ").concat(description));
 }
 showKm(newTruck.km, newTruck.kg, newTruck.description);

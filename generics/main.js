@@ -1,13 +1,14 @@
 "use strict";
-class IdentityClass {
-    constructor(value) {
+var IdentityClass = /** @class */ (function () {
+    function IdentityClass(value) {
         this.value = value;
     }
-    getIdentity() {
+    IdentityClass.prototype.getIdentity = function () {
         return this.value;
-    }
-}
-const myNumberClass = new IdentityClass(1);
+    };
+    return IdentityClass;
+}());
+var myNumberClass = new IdentityClass(1);
 console.log(myNumberClass.getIdentity());
-const myStringClass = new IdentityClass('welcome!');
+var myStringClass = new IdentityClass('welcome!');
 console.log(myStringClass.getIdentity());

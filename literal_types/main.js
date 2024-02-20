@@ -11,10 +11,10 @@ function getStatusMessage(status) {
         return 'test 3';
     }
 }
-const message1 = getStatusMessage('sucess'); //test 1
+var message1 = getStatusMessage('sucess'); //test 1
 //const message2 = getStatusMessage('test') //error
-const message3 = getStatusMessage('error'); //test 2
-const local1 = {
+var message3 = getStatusMessage('error'); //test 2
+var local1 = {
     latitude: -150,
     longitude: 45,
     status: 'active'
